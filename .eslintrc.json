@@ -1,0 +1,32 @@
+{
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": ["error", { "bracketSpacing": true }],
+    "import/prefer-default-export": "off",
+    "linebreak-style": 0,
+    "object-curly-spacing": "off",
+    "no-unused-vars": "warn",
+    "no-console": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/function-component-definition": [
+      1,
+      {
+        "namedComponents": [
+          "function-declaration",
+          "function-expression",
+          "arrow-function",
+          "function-declaration",
+          "function-expression",
+          "arrow-function"
+        ],
+        "unnamedComponents": [
+          "function-expression",
+          "arrow-function",
+          "function-expression",
+          "arrow-function"
+        ]
+      }
+    ]
+  }
+}

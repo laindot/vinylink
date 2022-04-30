@@ -4,6 +4,7 @@
   "rules": {
     "prettier/prettier": ["error", { "bracketSpacing": true }],
     "import/prefer-default-export": "off",
+    "default-param-last": 0,
     "linebreak-style": 0,
     "object-curly-spacing": "off",
     "no-unused-vars": "warn",
@@ -27,6 +28,7 @@
           "arrow-function"
         ]
       }
-    ]
+    ],
+    "react/prop-types": 1
   }
 }

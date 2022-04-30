@@ -1,10 +1,8 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Platform } from 'react-native';
 import Home from '../screens/home';
 import Products from '../screens/products';
 import ProductDetails from '../screens/product-detail';
-import { COLORS } from '../constants/index';
 
 const Stack = createNativeStackNavigator();
 

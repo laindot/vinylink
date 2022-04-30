@@ -10,6 +10,7 @@
     "no-unused-vars": "warn",
     "no-console": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-boolean-value": 1,
     "react/function-component-definition": [
       1,
       {

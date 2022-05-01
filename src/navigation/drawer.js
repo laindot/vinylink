@@ -9,7 +9,7 @@ const Drawer = createDrawerNavigator();
 
 const DrawerNavigator = () => (
   <Drawer.Navigator
-    initialRouteName="shopStack"
+    initialRouteName="Home"
     screenOptions={{
       headerStyle: {
         backgroundColor: Platform.OS === 'android' ? COLORS.primaryColor : '',
@@ -22,7 +22,11 @@ const DrawerNavigator = () => (
       },
     }}
   >
-    <Drawer.Screen name="ShopStack" component={ShopNavigator} />
+    <Drawer.Screen
+      name="Home"
+      component={ShopNavigator}
+      options={{ headerShown: false }}
+    />
     <Drawer.Screen name="ListingStack" component={ListingNavigator} />
   </Drawer.Navigator>
 );

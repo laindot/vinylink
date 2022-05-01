@@ -1,35 +1,25 @@
 import React from 'react';
-import { FlatList, View } from 'react-native';
-import { useSelector, useDispatch, connect } from 'react-redux';
+import { View, Text } from 'react-native';
 import { styles } from './styles';
-import Genre from '../../components/genre/index';
-import { genreAction } from '../../store/actions/index';
+import BrowseItem from '../../components/browse-item';
+import vinyl from '../../../assets/icons/vinyl.png';
+import mic from '../../../assets/icons/mic.png';
 
-const Home = () => {
-  const dispatch = useDispatch();
-  console.log(
-    'state',
-    useSelector((state) => state)
-  );
-  const genres = useSelector((state) => state.genres.genres);
-  const handleSelectGenre = (genre) => {
-    dispatch(genreAction.selectGenre(genre.Id));
-
-    // navigation.navigate('Album', { name: genre.name });
-  };
-  const renderItem = ({ item }) => (
-    <Genre item={item} onSelected={handleSelectGenre} />
-  );
-
+const Home = ({ navigation }) => {
+  const navigate = (destination) => navigation.navigate(destination);
   return (
-    <View>
-      <FlatList
-        data={genres}
-        keyExtractor={(item) => item.Id}
-        renderItem={renderItem}
-      />
+    <View style={styles.container}>
+      <Text style={styles.title}>Browse</Text>
+      <View style={styles.itemContainer}>
+        <BrowseItem caption="View All Listings" icon={vinyl} />
+        <BrowseItem
+          caption="Browse by Genre"
+          icon={mic}
+          onSelect={() => navigation.navigate('Genres')}
+        />
+      </View>
     </View>
   );
 };
 
-export default connect()(Home);
+export default Home;

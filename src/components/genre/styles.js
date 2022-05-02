@@ -5,8 +5,7 @@ const { width, height } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    borderRadius: 5,
+    borderRadius: 10,
     shadoColor: '#000',
     shadowOffset: {
       width: 0,
@@ -17,19 +16,31 @@ export const styles = StyleSheet.create({
     elevation: 3,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 10,
+    marginTop: 20,
+    marginHorizontal: 20,
     height: height / 2,
+    backgroundColor: COLORS.white,
   },
   touchable: {
     flex: 1,
     alignItems: 'center',
   },
   slideshowContainer: {
-    width: width - 10,
+    // width: width - 40,
+    height: 200,
   },
   title: {
     fontFamily: 'OpenSans-Bold',
     fontSize: 18,
+    fontWeight: '400',
+    textAlign: 'center',
+    marginTop: 10,
     color: COLORS.textColor,
+  },
+  description: {
+    fontFamily: 'OpenSans-Bold',
+    fontSize: 14,
+    textAlign: 'center',
+    marginHorizontal: 10,
   },
 });

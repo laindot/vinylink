@@ -17,13 +17,20 @@ const Genre = ({ item, onSelected }) => {
       >
         <View onLayout={onLayout} style={styles.slideshowContainer}>
           <SliderBox
+            ImageComponent={Image}
             images={item.slideshow}
             sliderBoxHeight={200}
             parentWidth={width}
             autoplay
             cicleLoop
+            ImageComponentStyle={{
+              borderTopRightRadius: 10,
+              borderTopLeftRadius: 10,
+              height: 200,
+            }}
           />
           <Text style={styles.title}>{item.name}</Text>
+          <Text style={styles.description}>{item.description}</Text>
         </View>
       </TouchableOpacity>
     </View>

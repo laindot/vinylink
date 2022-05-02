@@ -4,6 +4,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import ShopNavigator from './shop';
 import ListingNavigator from './listings';
 import { COLORS } from '../constants';
+import Genres from '../screens/genres';
 
 const Drawer = createDrawerNavigator();
 
@@ -22,12 +23,9 @@ const DrawerNavigator = () => (
       },
     }}
   >
-    <Drawer.Screen
-      name="Home"
-      component={ShopNavigator}
-      options={{ headerShown: false }}
-    />
-    <Drawer.Screen name="ListingStack" component={ListingNavigator} />
+    <Drawer.Screen name="Home" component={ShopNavigator} />
+    <Drawer.Screen name="Genres" component={Genres} />
+    <Drawer.Screen name="My Listings" component={ListingNavigator} />
   </Drawer.Navigator>
 );
 

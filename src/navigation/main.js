@@ -4,21 +4,18 @@ import Home from '../screens/home';
 import Products from '../screens/products';
 import ProductDetails from '../screens/product-detail';
 import Genres from '../screens/genres';
+import DrawerNavigator from './drawer';
 
 const Stack = createNativeStackNavigator();
 
-const ShopNavigator = () => (
-  <Stack.Navigator initialRouteName="HomeStack">
+const MainNavigator = () => (
+  <Stack.Navigator initialRouteName="Drawer">
     <Stack.Screen
-      name="HomeStack"
-      component={Home}
+      name="Drawer"
+      component={DrawerNavigator}
       options={{ headerShown: false }}
     />
-    {/* <Stack.Screen
-      name="Genres"
-      component={Genres}
-      options={{ headerShown: false }}
-    /> */}
+    <Stack.Screen name="Genres" component={Genres} />
     <Stack.Screen
       name="Album"
       component={Products}
@@ -32,4 +29,4 @@ const ShopNavigator = () => (
   </Stack.Navigator>
 );
 
-export default ShopNavigator;
+export default MainNavigator;

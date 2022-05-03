@@ -1,7 +1,7 @@
 import { StyleSheet, Dimensions } from 'react-native';
 import { COLORS } from '../../constants/index';
 
-const { width, height } = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   container: {
@@ -13,7 +13,6 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.22,
     shadowRadius: 2.22,
     elevation: 3,
-    // justifyContent: 'center',
     height: 240,
     width: width / 2.3,
     alignItems: 'center',

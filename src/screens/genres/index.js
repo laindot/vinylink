@@ -5,17 +5,12 @@ import { styles } from './styles';
 import Genre from '../../components/genre/index';
 import { genreAction } from '../../store/actions/index';
 
-const Genres = () => {
+const Genres = ({ navigation }) => {
   const dispatch = useDispatch();
-  console.log(
-    'state',
-    useSelector((state) => state)
-  );
   const genres = useSelector((state) => state.genres.genres);
   const handleSelectGenre = (genre) => {
     dispatch(genreAction.selectGenre(genre.Id));
-
-    // navigation.navigate('Album', { name: genre.name });
+    navigation.navigate('Listings', { name: genre.name });
   };
   const renderItem = ({ item }) => (
     <Genre item={item} onSelected={handleSelectGenre} />

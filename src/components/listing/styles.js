@@ -1,7 +1,7 @@
 import { StyleSheet, Dimensions } from 'react-native';
 import { COLORS } from '../../constants/index';
 
-const { width, height } = Dimensions.get('window');
+const { height } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   container: {
@@ -14,33 +14,40 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.22,
     shadowRadius: 2.22,
     elevation: 3,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 20,
-    marginHorizontal: 20,
-    height: height / 2,
+    marginTop: 10,
+    marginHorizontal: 15,
+    height: height / 5,
     backgroundColor: COLORS.white,
   },
   touchable: {
     flex: 1,
-    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    padding: 10,
   },
-  slideshowContainer: {
-    width: width - 40,
-    height: 200,
+  picture: {
+    marginTop: 7,
+    height: 110,
+    width: 110,
+  },
+  caption: {
+    width: 230,
+    marginRight: 10,
+    marginLeft: 10,
   },
   title: {
+    // flex: 1,
     fontFamily: 'OpenSans-Bold',
     fontSize: 18,
-    fontWeight: '400',
-    textAlign: 'center',
-    marginTop: 10,
+    fontWeight: '300',
+    textAlign: 'left',
     color: COLORS.textColor,
   },
-  description: {
+  price: {
+    fontSize: 22,
     fontFamily: 'OpenSans-Bold',
-    fontSize: 14,
-    textAlign: 'center',
-    marginHorizontal: 10,
+    fontWeight: '600',
+    color: COLORS.textColor,
   },
 });

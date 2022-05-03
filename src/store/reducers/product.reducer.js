@@ -4,12 +4,12 @@ import { productType } from '../types';
 const { SELECT_ALBUM, FILTERED_ALBUMS } = productType;
 
 const initialState = {
-  albums: PRODUCTS,
+  listings: PRODUCTS,
   filteredAlbums: [],
   selectedAlbum: null,
 };
 
-export default (action, state = initialState) => {
+export default (state = initialState, action) => {
   switch (action.type) {
     case SELECT_ALBUM:
       return {

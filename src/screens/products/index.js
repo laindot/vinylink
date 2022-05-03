@@ -1,11 +1,31 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { FlatList, View } from 'react-native';
+import { useSelector, useDispatch, connect } from 'react-redux';
 import { styles } from './styles';
+import Listing from '../../components/listing';
+import { genreAction } from '../../store/actions/index';
 
-const Products = () => (
-  <View style={styles.container}>
-    <Text>sdfsd</Text>
-  </View>
-);
+const Products = () => {
+  const dispatch = useDispatch();
+  const listings = useSelector((state) => state.products.listings);
+  const handleSelectGenre = (genre) => {
+    dispatch(genreAction.selectGenre(genre.Id));
 
-export default Products;
+    // navigation.navigate('Album', { name: genre.name });
+  };
+  const renderItem = ({ item }) => (
+    <Listing item={item} onSelected={handleSelectGenre} />
+  );
+
+  return (
+    <View style={styles.container}>
+      <FlatList
+        data={listings}
+        keyExtractor={(item) => item.Id}
+        renderItem={renderItem}
+      />
+    </View>
+  );
+};
+
+export default connect()(Products);

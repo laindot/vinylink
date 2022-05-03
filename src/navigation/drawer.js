@@ -5,6 +5,7 @@ import ShopNavigator from './shop';
 import ListingNavigator from './listings';
 import { COLORS } from '../constants';
 import Genres from '../screens/genres';
+import Products from '../screens/products';
 
 const Drawer = createDrawerNavigator();
 
@@ -25,6 +26,7 @@ const DrawerNavigator = () => (
   >
     <Drawer.Screen name="Home" component={ShopNavigator} />
     <Drawer.Screen name="Genres" component={Genres} />
+    <Drawer.Screen name="Listings" component={Products} />
     <Drawer.Screen name="My Listings" component={ListingNavigator} />
   </Drawer.Navigator>
 );

@@ -1,3 +1,13 @@
+const pic1 = require('../../assets/products/tdsotm.jpg');
+const pic2 = require('../../assets/products/bluealbum.jpg');
+const pic3 = require('../../assets/products/spiderland.jpg');
+const pic4 = require('../../assets/products/mmfood.jpg');
+const pic5 = require('../../assets/products/mbdtf.jpg');
+const pic6 = require('../../assets/products/illmatic.jpg');
+const pic7 = require('../../assets/products/rtl.jpg');
+const pic8 = require('../../assets/products/atf.jpg');
+const pic9 = require('../../assets/products/symbolic.jpg');
+
 export default [
   {
     Id: 1,
@@ -6,7 +16,7 @@ export default [
     title: 'Brand new The Dark Side of the Moon vinyl',
     artist: 'Pink Floyd',
     price: 34,
-    picture: '/tdsofm.jpg',
+    picture: pic1,
   },
   {
     Id: 2,
@@ -15,7 +25,7 @@ export default [
     title: 'Weezer (Blue Album) on sale',
     artist: 'Weezer',
     price: 34,
-    picture: '/bluealbum.jpg',
+    picture: pic2,
   },
   {
     Id: 3,
@@ -24,7 +34,7 @@ export default [
     title: 'Spiderland',
     artist: 'Slint',
     price: 34,
-    picture: '/spiderland.jpg',
+    picture: pic3,
   },
   {
     Id: 4,
@@ -33,7 +43,7 @@ export default [
     title: 'MM... FOOD',
     artist: 'MF DOOM',
     price: 34,
-    picture: '/mmfood.jpg',
+    picture: pic4,
   },
   {
     Id: 5,
@@ -42,16 +52,16 @@ export default [
     title: 'My Beautiful Dark Twisted Fantasy',
     artist: 'Kanye West',
     price: 34,
-    picture: '/mbdtf.jpg',
+    picture: pic5,
   },
   {
     Id: 6,
     genre: 2,
-    seller: 'Luis Sindelay',
+    seller: 'Luis Vielma',
     title: 'Illmatic',
     artist: 'Nas',
     price: 34,
-    picture: '/illmatic.jpg',
+    picture: pic6,
   },
   {
     Id: 7,
@@ -60,7 +70,7 @@ export default [
     title: 'Ride The Lightning',
     artist: 'Metallica',
     price: 34,
-    picture: '/rtl.jpg',
+    picture: pic7,
   },
   {
     Id: 8,
@@ -69,7 +79,7 @@ export default [
     title: 'Around The Fur',
     artist: 'Deftones',
     price: 34,
-    picture: '/atf.jpg',
+    picture: pic8,
   },
   {
     Id: 9,
@@ -78,6 +88,6 @@ export default [
     title: 'Symbolic',
     artist: 'Death',
     price: 34,
-    picture: '/symbolic.jpg',
+    picture: pic9,
   },
 ];

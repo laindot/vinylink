@@ -30,6 +30,8 @@
         ]
       }
     ],
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "react/no-unstable-nested-components": ["off", { "allowAsProps": true }],
+    "arrow-body-style": ["always"]
   }
 }

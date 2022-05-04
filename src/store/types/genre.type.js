@@ -1,3 +1,4 @@
 export default {
   SELECT_GENRE: 'SELECT_GENRE',
+  RESET_STATE: 'RESET_STATE',
 };

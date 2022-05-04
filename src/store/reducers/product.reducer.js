@@ -1,11 +1,11 @@
 import { PRODUCTS } from '../../constants/index';
 import { productType } from '../types';
 
-const { SELECT_ALBUM, FILTERED_ALBUMS } = productType;
+const { SELECT_ALBUM, FILTER_PRODUCTS } = productType;
 
 const initialState = {
   listings: PRODUCTS,
-  filteredAlbums: [],
+  filteredListings: [],
   selectedAlbum: null,
 };
 
@@ -18,11 +18,11 @@ export default (state = initialState, action) => {
           (album) => album.Id === action.albumId
         ),
       };
-    case FILTERED_ALBUMS:
+    case FILTER_PRODUCTS:
       return {
         ...state,
-        filteredAlbums: state.albums.filter(
-          (album) => album.genre === action.genreId
+        filteredListings: state.listings.filter(
+          (listing) => listing.genre === action.payload
         ),
       };
     default:

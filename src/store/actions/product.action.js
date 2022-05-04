@@ -1,6 +1,6 @@
 import { productType } from '../types';
 
-const { SELECT_PRODUCT, FILTERED_PRODUCTS } = productType;
+const { SELECT_PRODUCT, FILTER_PRODUCTS } = productType;
 
 export default {
   selectAlbum: (albumId) => ({
@@ -8,8 +8,8 @@ export default {
     payload: albumId,
   }),
 
-  filteredAlbums: (Id) => ({
-    type: FILTERED_PRODUCTS,
+  filterProducts: (Id) => ({
+    type: FILTER_PRODUCTS,
     payload: Id,
   }),
 };

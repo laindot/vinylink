@@ -1,21 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FlatList, View } from 'react-native';
 import { useSelector, useDispatch, connect } from 'react-redux';
 import { styles } from './styles';
 import Listing from '../../components/listing';
-import { genreAction } from '../../store/actions/index';
+import { genreAction, productAction } from '../../store/actions/index';
 
 const Products = () => {
   const dispatch = useDispatch();
-  const listings = useSelector((state) => state.products.listings);
-  const handleSelectGenre = (genre) => {
-    dispatch(genreAction.selectGenre(genre.Id));
-
+  const selectedGenre = useSelector((state) => state.genres.selectedGenre);
+  const listings = selectedGenre
+    ? useSelector((state) => state.products.filteredListings)
+    : useSelector((state) => state.products.listings);
+  const handleSelectGenre = (listing) => {
+    dispatch(genreAction.selectGenre(listing.Id));
     // navigation.navigate('Album', { name: genre.name });
   };
+
   const renderItem = ({ item }) => (
     <Listing item={item} onSelected={handleSelectGenre} />
   );
+
+  useEffect(() => {
+    if (selectedGenre) {
+      dispatch(productAction.filterProducts(selectedGenre.Id));
+    }
+    return () => dispatch(genreAction.resetState());
+  }, []);
 
   return (
     <View style={styles.container}>

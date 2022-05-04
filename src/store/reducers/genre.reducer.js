@@ -1,7 +1,7 @@
 import { GENRES } from '../../constants/index';
 import { genreType } from '../types/index';
 
-const { SELECT_GENRE } = genreType;
+const { SELECT_GENRE, RESET_STATE } = genreType;
 
 const initialState = {
   genres: GENRES,
@@ -20,6 +20,11 @@ export default (state = initialState, action) => {
         selectedGenre: state.genres[indexGenre],
       };
     }
+    case RESET_STATE:
+      return {
+        ...state,
+        selectedGenre: action.payload,
+      };
     default:
       return state;
   }

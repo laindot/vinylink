@@ -13,20 +13,19 @@ const DrawerNavigator = () => (
   <Drawer.Navigator
     initialRouteName="Home"
     screenOptions={{
-      headerStyle: {
-        backgroundColor: Platform.OS === 'android' ? COLORS.primaryColor : '',
-      },
-      headerTintColor:
-        Platform.OS === 'android' ? 'white' : COLORS.primaryColor,
-      headerTitleStyle: {
-        fontFamily: 'OpenSans-Bold',
-        fontSize: 17,
-      },
+      // headerStyle: {
+      //   backgroundColor: Platform.OS === 'android' ? COLORS.primaryColor : '',
+      // },
+      // headerTintColor:
+      //   Platform.OS === 'android' ? 'white' : COLORS.primaryColor,
+      // headerTitleStyle: {
+      //   fontFamily: 'OpenSans-Bold',
+      //   fontSize: 17,
+      // },
+      headerShown: false,
     }}
   >
     <Drawer.Screen name="Home" component={ShopNavigator} />
-    <Drawer.Screen name="Genres" component={Genres} />
-    <Drawer.Screen name="Listings" component={Products} />
     <Drawer.Screen name="My Listings" component={ListingNavigator} />
   </Drawer.Navigator>
 );

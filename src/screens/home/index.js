@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text } from 'react-native';
 import { styles } from './styles';
 import BrowseItem from '../../components/browse-item';

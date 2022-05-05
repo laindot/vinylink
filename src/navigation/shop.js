@@ -10,7 +10,7 @@ const Stack = createNativeStackNavigator();
 
 const ShopNavigator = () => (
   <Stack.Navigator
-    initialRouteName="HomeStack"
+    initialRouteName="Homestack"
     screenOptions={{
       headerStyle: { height: 60 },
       headerMode: 'screen',
@@ -37,7 +37,11 @@ const ShopNavigator = () => (
     <Stack.Screen
       name="Listings"
       component={Products}
-      // options={({ route }) => ({ title: route.params.name })}
+      options={{
+        header: ({ navigation }) => (
+          <Header navigation={navigation} title="Listings" />
+        ),
+      }}
     />
     <Stack.Screen
       name="AlbumDetail"

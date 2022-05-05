@@ -3,9 +3,7 @@ import { Platform } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import ShopNavigator from './shop';
 import ListingNavigator from './listings';
-import { COLORS } from '../constants';
-import Genres from '../screens/genres';
-import Products from '../screens/products';
+import DrawerList from '../components/drawer-list';
 
 const Drawer = createDrawerNavigator();
 
@@ -24,6 +22,7 @@ const DrawerNavigator = () => (
       // },
       headerShown: false,
     }}
+    drawerContent={({ navigation }) => <DrawerList navigation={navigation} />}
   >
     <Drawer.Screen name="Home" component={ShopNavigator} />
     <Drawer.Screen name="My Listings" component={ListingNavigator} />

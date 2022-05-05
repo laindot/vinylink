@@ -9,6 +9,6 @@ export default {
   }),
   resetState: () => ({
     type: RESET_STATE,
-    // payload,
+    payload: null,
   }),
 };

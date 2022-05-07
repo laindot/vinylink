@@ -5,6 +5,7 @@ import Home from '../screens/home';
 import Products from '../screens/products';
 import ProductDetail from '../screens/product-detail';
 import Genres from '../screens/genres';
+import Cart from '../screens/cart';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,7 +22,7 @@ const ShopNavigator = () => (
       component={Home}
       options={{
         header: ({ navigation }) => (
-          <Header navigation={navigation} title="Home" />
+          <Header navigation={navigation} title="Home" cartButton={true} />
         ),
       }}
     />
@@ -30,7 +31,7 @@ const ShopNavigator = () => (
       component={Genres}
       options={{
         header: ({ navigation }) => (
-          <Header navigation={navigation} title="Genres" />
+          <Header navigation={navigation} title="Genres" cartButton={true} />
         ),
       }}
     />
@@ -39,7 +40,7 @@ const ShopNavigator = () => (
       component={Products}
       options={{
         header: ({ navigation }) => (
-          <Header navigation={navigation} title="Listings" />
+          <Header navigation={navigation} title="Listings" cartButton={true} />
         ),
       }}
     />
@@ -48,7 +49,16 @@ const ShopNavigator = () => (
       component={ProductDetail}
       options={{
         header: ({ navigation }) => (
-          <Header navigation={navigation} title="Product" />
+          <Header navigation={navigation} title="Product" cartButton={true} />
+        ),
+      }}
+    />
+    <Stack.Screen
+      name="Cart"
+      component={Cart}
+      options={{
+        header: ({ navigation }) => (
+          <Header navigation={navigation} title="Cart" />
         ),
       }}
     />

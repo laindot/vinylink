@@ -21,4 +21,14 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     left: 16,
   },
+  cart: {
+    color: '#fff',
+    // position: 'absolute',
+    // right: 5,
+  },
+  bubble: {
+    position: 'absolute',
+    left: -10,
+    top: 10,
+  },
 });

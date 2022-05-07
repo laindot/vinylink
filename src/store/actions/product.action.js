@@ -3,9 +3,9 @@ import { productType } from '../types';
 const { SELECT_PRODUCT, FILTER_PRODUCTS } = productType;
 
 export default {
-  selectAlbum: (albumId) => ({
+  selectProduct: (productId) => ({
     type: SELECT_PRODUCT,
-    payload: albumId,
+    payload: productId,
   }),
 
   filterProducts: (Id) => ({

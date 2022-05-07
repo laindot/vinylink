@@ -1,11 +1,35 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import styles from './styles';
+import { useSelector, connect, useDispatch } from 'react-redux';
+import { View, ScrollView, Text, Button, Image } from 'react-native';
+import { COLORS } from '../../constants';
+import { styles } from './styles';
+import { productAction } from '../../store/actions';
+import SellerCard from '../../components/seller-card';
 
-const ProductDetails = () => (
-  <View style={styles.container}>
-    <Text>sdfsd</Text>
-  </View>
-);
+const ProductDetail = ({ navigation, route }) => {
+  const dispatch = useDispatch();
+  const product = useSelector((state) => state.products.selectedProduct);
+  console.log(product);
+  const { title, picture, price, seller } = product;
 
-export default ProductDetails;
+  const handleAddToCart = () => dispatch(addItem(product));
+  return (
+    <ScrollView>
+      <View style={styles.container}>
+        <Text style={styles.title}>{title}</Text>
+        {/* <Text style={styles.text}>{description}</Text> */}
+        <Image style={styles.picture} source={picture} />
+        <Text style={styles.price}>$ {price}</Text>
+        <Button
+          style={styles.cartButton}
+          title="Order now"
+          onPress={() => handleAddToCart()}
+          color={COLORS.primaryColor}
+        />
+        <SellerCard item={seller} />
+      </View>
+    </ScrollView>
+  );
+};
+
+export default connect()(ProductDetail);

@@ -1,21 +1,21 @@
 import { PRODUCTS } from '../../constants/index';
 import { productType } from '../types';
 
-const { SELECT_ALBUM, FILTER_PRODUCTS } = productType;
+const { SELECT_PRODUCT, FILTER_PRODUCTS } = productType;
 
 const initialState = {
   listings: PRODUCTS,
   filteredListings: [],
-  selectedAlbum: null,
+  selectedProduct: null,
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case SELECT_ALBUM:
+    case SELECT_PRODUCT:
       return {
         ...state,
-        selectedAlbum: state.albums.find(
-          (album) => album.Id === action.albumId
+        selectedProduct: state.listings.find(
+          (listing) => listing.Id === action.payload
         ),
       };
     case FILTER_PRODUCTS:

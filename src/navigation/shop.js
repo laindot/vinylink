@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Header from '../components/header';
 import Home from '../screens/home';
 import Products from '../screens/products';
-import ProductDetails from '../screens/product-detail';
+import ProductDetail from '../screens/product-detail';
 import Genres from '../screens/genres';
 
 const Stack = createNativeStackNavigator();
@@ -44,9 +44,13 @@ const ShopNavigator = () => (
       }}
     />
     <Stack.Screen
-      name="AlbumDetail"
-      component={ProductDetails}
-      options={({ route }) => ({ title: route.params.name })}
+      name="ProductDetail"
+      component={ProductDetail}
+      options={{
+        header: ({ navigation }) => (
+          <Header navigation={navigation} title="Product" />
+        ),
+      }}
     />
   </Stack.Navigator>
 );

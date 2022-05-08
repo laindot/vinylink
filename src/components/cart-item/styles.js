@@ -14,12 +14,14 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.22,
     shadowRadius: 2.22,
     elevation: 3,
-    marginTop: 10,
+    // marginTop: 10,
+    marginBottom: 10,
     marginHorizontal: 15,
     height: height / 5,
     backgroundColor: COLORS.white,
+    // paddingVertical: 10,
   },
-  touchable: {
+  card: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'flex-start',
@@ -49,5 +51,12 @@ export const styles = StyleSheet.create({
     fontFamily: 'OpenSans-Bold',
     fontWeight: '600',
     color: COLORS.textColor,
+  },
+  delete: {
+    textAlign: 'center',
+    fontSize: 18,
+    fontFamily: 'OpenSans-Bold',
+    fontWeight: '600',
+    color: COLORS.primaryColor,
   },
 });

@@ -24,8 +24,8 @@ const Header = ({ navigation, title, cartButton }) => (
           onPress={() => navigation.navigate('Cart')}
         />
         {/* <View style={styles.bubble}>
-        <BubbleAlert />
-      </View> */}
+          <BubbleAlert />
+        </View> */}
       </View>
     ) : null}
   </View>

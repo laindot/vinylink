@@ -3,7 +3,7 @@ import { useSelector, connect, useDispatch } from 'react-redux';
 import { View, ScrollView, Text, Button, Image } from 'react-native';
 import { COLORS } from '../../constants';
 import { styles } from './styles';
-import { productAction } from '../../store/actions';
+import { cartAction } from '../../store/actions';
 import SellerCard from '../../components/seller-card';
 
 const ProductDetail = ({ navigation, route }) => {
@@ -12,7 +12,7 @@ const ProductDetail = ({ navigation, route }) => {
   console.log(product);
   const { title, picture, price, seller } = product;
 
-  const handleAddToCart = () => dispatch(addItem(product));
+  const handleAddToCart = () => dispatch(cartAction.addItem(product));
   return (
     <ScrollView>
       <View style={styles.container}>

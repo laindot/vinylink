@@ -5,6 +5,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 20,
+    backgroundColor: COLORS.backgroundColor,
   },
   title: {
     fontSize: 18,
@@ -14,17 +15,10 @@ export const styles = StyleSheet.create({
     flexGrow: 1,
     width: 350,
   },
-  cartButton: {
-    marginVertical: 25,
-    height: 40,
-  },
   picture: {
     height: 300,
     width: '100%',
     maxWidth: 500,
-    // alignItems: 'center',
-    // alignContent: 'center',
-    // justifyContent: 'center',
   },
   price: {
     marginTop: 10,

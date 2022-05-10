@@ -1,10 +1,15 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
 import { styles } from './styles';
 
 const DrawerList = ({ navigation }) => {
   return (
-    <DrawerContentScrollView>
+    <DrawerContentScrollView style={styles.container}>
+      {/* <View style={styles.header}>
+        <Text style={styles.caption}>pepito grillo</Text>
+        <Text style={styles.caption}>pepitogrillo@gamil.com</Text>
+      </View> */}
       <DrawerItem
         labelStyle={styles.title}
         label="Home"

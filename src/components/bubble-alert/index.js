@@ -2,7 +2,8 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { styles } from './styles';
 
-const BubbleAlert = () => {
+const BubbleAlert = ({ value }) => {
+  console.log('ssssssssssssssssssssssssssssssssssssssssssssssssssss', value);
   const getNumber = (n) => {
     if (!n) {
       return '';
@@ -11,7 +12,7 @@ const BubbleAlert = () => {
   };
   return (
     <View style={styles.container}>
-      <Text style={styles.number}>+9</Text>
+      <Text style={styles.number}>{getNumber(value)}</Text>
     </View>
   );
 };

@@ -19,7 +19,6 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     flexGrow: 1,
-    // height: 40,
     padding: 5,
   },
   text: {

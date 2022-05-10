@@ -4,6 +4,7 @@ import { useSelector, useDispatch, connect } from 'react-redux';
 import { styles } from './styles';
 import { cartAction } from '../../store/actions/index';
 import CartItem from '../../components/cart-item';
+import { COLORS } from '../../constants';
 
 const Products = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -16,19 +17,33 @@ const Products = ({ navigation }) => {
   );
 
   return (
-    <View style={styles.container}>
-      <View style={styles.list}>
-        <FlatList
-          data={items}
-          keyExtractor={(item) => item.Id}
-          renderItem={renderItem}
-        />
-      </View>
-      <View style={styles.footer}>
-        <Text style={styles.totalPrice}>Total:</Text>
-        <Text style={styles.totalPrice}> $ {total}</Text>
-      </View>
-    </View>
+    <>
+      {items.length ? (
+        <View style={styles.container}>
+          <View style={styles.list}>
+            <FlatList
+              data={items}
+              keyExtractor={(item) => item.Id}
+              renderItem={renderItem}
+            />
+          </View>
+          <View style={styles.footer}>
+            <Text style={styles.totalPrice}>Total:</Text>
+            <Text style={styles.totalPrice}> $ {total}</Text>
+          </View>
+        </View>
+      ) : (
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            backgroundColor: COLORS.backgroundColor,
+          }}
+        >
+          <Text style={styles.empty}>The cart is empty</Text>
+        </View>
+      )}
+    </>
   );
 };
 

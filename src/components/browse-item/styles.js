@@ -21,9 +21,6 @@ export const styles = StyleSheet.create({
     marginTop: 20,
     marginHorizontal: 5,
   },
-  touchable: {
-    // flex: 1,
-  },
   iconContainer: {
     height: 180,
     width: width / 2.3,
@@ -41,8 +38,8 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: 'OpenSans-Bold',
     fontSize: 20,
-    fontWeight: '400',
+    fontWeight: 'bold',
     marginTop: 10,
-    color: COLORS.textColor,
+    color: COLORS.primaryColor,
   },
 });

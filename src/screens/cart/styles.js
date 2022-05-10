@@ -4,6 +4,8 @@ import { COLORS } from '../../constants';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: COLORS.backgroundColor,
+    justifyContent: 'center',
   },
   list: {
     flex: 1,
@@ -26,5 +28,11 @@ export const styles = StyleSheet.create({
     fontFamily: 'OpenSans-Bold',
     fontWeight: '600',
     color: COLORS.primaryColor,
+  },
+  empty: {
+    alignItems: 'center',
+    fontSize: 18,
+    // color: '#000',
+    textAlign: 'center',
   },
 });

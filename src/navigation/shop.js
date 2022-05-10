@@ -22,7 +22,12 @@ const ShopNavigator = () => (
       component={Home}
       options={{
         header: ({ navigation }) => (
-          <Header navigation={navigation} title="Home" cartButton={true} />
+          <Header
+            navigation={navigation}
+            title="Home"
+            cart={true}
+            menu={true}
+          />
         ),
       }}
     />
@@ -31,7 +36,12 @@ const ShopNavigator = () => (
       component={Genres}
       options={{
         header: ({ navigation }) => (
-          <Header navigation={navigation} title="Genres" cartButton={true} />
+          <Header
+            navigation={navigation}
+            title="Genres"
+            cart={true}
+            menu={true}
+          />
         ),
       }}
     />
@@ -40,7 +50,12 @@ const ShopNavigator = () => (
       component={Products}
       options={{
         header: ({ navigation }) => (
-          <Header navigation={navigation} title="Listings" cartButton={true} />
+          <Header
+            navigation={navigation}
+            title="Listings"
+            cart={true}
+            menu={true}
+          />
         ),
       }}
     />
@@ -49,7 +64,12 @@ const ShopNavigator = () => (
       component={ProductDetail}
       options={{
         header: ({ navigation }) => (
-          <Header navigation={navigation} title="Product" cartButton={true} />
+          <Header
+            navigation={navigation}
+            title="Product"
+            cart={true}
+            menu={true}
+          />
         ),
       }}
     />
@@ -58,7 +78,7 @@ const ShopNavigator = () => (
       component={Cart}
       options={{
         header: ({ navigation }) => (
-          <Header navigation={navigation} title="Cart" />
+          <Header navigation={navigation} title="Cart" menu={true} />
         ),
       }}
     />

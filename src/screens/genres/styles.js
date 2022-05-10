@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
+import { COLORS } from '../../constants';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    // padding: 5,
+    backgroundColor: COLORS.backgroundColor,
   },
 });

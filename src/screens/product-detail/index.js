@@ -14,10 +14,9 @@ const ProductDetail = ({ navigation, route }) => {
 
   const handleAddToCart = () => dispatch(cartAction.addItem(product));
   return (
-    <ScrollView>
-      <View style={styles.container}>
+    <ScrollView style={styles.container}>
+      <View>
         <Text style={styles.title}>{title}</Text>
-        {/* <Text style={styles.text}>{description}</Text> */}
         <Image style={styles.picture} source={picture} />
         <Text style={styles.price}>$ {price}</Text>
         <Button

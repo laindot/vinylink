@@ -1,0 +1,4 @@
+export default {
+  ADD_LISTING: 'ADD_LISTING',
+  LOAD_LISTING: 'LOAD_LISTING',
+};

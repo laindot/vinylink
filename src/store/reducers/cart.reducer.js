@@ -50,7 +50,11 @@ export default (state = initialState, action) => {
         total: sumTotal(cleanCart),
       };
     case CONFIRM_CART:
-      return state;
+      return {
+        ...state,
+        items: [],
+        total: 0,
+      };
     default:
       return state;
   }

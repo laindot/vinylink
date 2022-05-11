@@ -18,7 +18,14 @@ const DrawerList = ({ navigation }) => {
       <DrawerItem
         labelStyle={styles.title}
         label="My Listings"
-        onPress={() => navigation.navigate('My Listings')}
+        onPress={() =>
+          navigation.navigate('My Listings', { screen: 'userListings' })
+        }
+      />
+      <DrawerItem
+        labelStyle={styles.title}
+        label="My Orders"
+        onPress={() => navigation.navigate('Home', { screen: 'Orders' })}
       />
     </DrawerContentScrollView>
   );

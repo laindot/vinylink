@@ -4,6 +4,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import ShopNavigator from './shop';
 import ListingNavigator from './listings';
 import DrawerList from '../components/drawer-list';
+import Order from '../screens/orders';
 
 const Drawer = createDrawerNavigator();
 
@@ -25,7 +26,12 @@ const DrawerNavigator = () => (
     drawerContent={({ navigation }) => <DrawerList navigation={navigation} />}
   >
     <Drawer.Screen name="Home" component={ShopNavigator} />
-    <Drawer.Screen name="My Listings" component={ListingNavigator} />
+    <Drawer.Screen
+      name="My Listings"
+      component={ListingNavigator}
+      screenOptions={{ headerShown: false }}
+    />
+    <Drawer.Screen name="My Orders" component={Order} />
   </Drawer.Navigator>
 );
 

@@ -21,7 +21,7 @@ const ProductDetail = ({ navigation, route }) => {
         <Text style={styles.price}>$ {price}</Text>
         <Button
           style={styles.cartButton}
-          title="Order now"
+          title="Add To Cart"
           onPress={() => handleAddToCart()}
           color={COLORS.primaryColor}
         />

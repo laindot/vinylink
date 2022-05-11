@@ -6,6 +6,7 @@ import Products from '../screens/products';
 import ProductDetail from '../screens/product-detail';
 import Genres from '../screens/genres';
 import Cart from '../screens/cart';
+import Order from '../screens/orders';
 
 const Stack = createNativeStackNavigator();
 
@@ -79,6 +80,15 @@ const ShopNavigator = () => (
       options={{
         header: ({ navigation }) => (
           <Header navigation={navigation} title="Cart" menu={true} />
+        ),
+      }}
+    />
+    <Stack.Screen
+      name="Orders"
+      component={Order}
+      options={{
+        header: ({ navigation }) => (
+          <Header navigation={navigation} title="Orders" menu={true} />
         ),
       }}
     />

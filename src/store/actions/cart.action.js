@@ -1,7 +1,7 @@
-// import { URL_API } from '../../utils/database';
+import { URL_API } from '../../utils/api';
 import { cartType } from '../types';
 
-const { ADD_ITEM, REMOVE_ITEM, COMFIRM_CART } = cartType;
+const { ADD_ITEM, REMOVE_ITEM, CONFIRM_CART } = cartType;
 
 export default {
   addItem: (item) => ({
@@ -28,7 +28,7 @@ export default {
         const result = await response.json();
         console.warn(result);
         dispatch({
-          type: COMFIRM_CART,
+          type: CONFIRM_CART,
           cart: result,
         });
       } catch (error) {

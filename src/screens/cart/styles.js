@@ -29,10 +29,13 @@ export const styles = StyleSheet.create({
     fontWeight: '600',
     color: COLORS.primaryColor,
   },
+  button: {
+    position: 'absolute',
+    right: 10,
+  },
   empty: {
     alignItems: 'center',
     fontSize: 18,
-    // color: '#000',
     textAlign: 'center',
   },
 });

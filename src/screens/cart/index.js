@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { FlatList, View, Text } from 'react-native';
+import { FlatList, View, Text, Button } from 'react-native';
 import { useSelector, useDispatch, connect } from 'react-redux';
 import { styles } from './styles';
 import { cartAction } from '../../store/actions/index';
@@ -10,7 +10,12 @@ const Products = ({ navigation }) => {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.cart.items);
   const total = useSelector((state) => state.cart.total);
+  const user = useSelector((state) => state.auth.userId);
+
   const handleDeleteItem = (Id) => dispatch(cartAction.removeItem(Id));
+  const handleConfirmCart = () => {
+    dispatch(cartAction.confirmCart(items, total, user));
+  };
 
   const renderItem = ({ item }) => (
     <CartItem item={item} onDelete={handleDeleteItem} />
@@ -27,9 +32,17 @@ const Products = ({ navigation }) => {
               renderItem={renderItem}
             />
           </View>
+
           <View style={styles.footer}>
             <Text style={styles.totalPrice}>Total:</Text>
             <Text style={styles.totalPrice}> $ {total}</Text>
+            <View style={styles.button}>
+              <Button
+                title="confirm"
+                onPress={() => handleConfirmCart()}
+                color={COLORS.primaryColor}
+              />
+            </View>
           </View>
         </View>
       ) : (

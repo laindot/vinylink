@@ -1,14 +1,15 @@
 import SQLite from 'react-native-sqlite-storage';
 
-const db = SQLite.openDatabase('places.db');
+const db = SQLite.openDatabase('listings.db');
 
 export const init = () => {
   const promise = new Promise((resolve, reject) => {
     db.transaction((tx) => {
       tx.executeSql(
-        'CREATE TABLE IF NOT EXISTS places (Id INTEGER PRIMARY KEY NOT NULL, name TEXT NOT NULL, image TEXT NOT NULL, address TEXT NOT NULL, latitude REAL NOT NULL, longitude REAL NOT NULL)',
+        'CREATE TABLE IF NOT EXISTS listings (Id INTEGER PRIMARY KEY NOT NULL, title TEXT NOT NULL, picture TEXT NOT NULL, price REAL NOT NULL, address TEXT NOT NULL)',
         [],
         () => {
+          console.log('successfully create database');
           resolve();
         },
         (_, err) => {
@@ -21,17 +22,17 @@ export const init = () => {
   return promise;
 };
 
-export const insertPlace = (name, image, address, latitude, longitude) => {
+export const insertListing = (title, picture, price, address) => {
   const promise = new Promise((resolve, reject) => {
     db.transaction((tx) => {
       tx.executeSql(
-        'INSERT INTO places (name, image, address, latitude, longitude) VALUES (?, ?, ?, ?, ?)',
-        [name, image, address, latitude, longitude],
+        'INSERT INTO listings (title, picture, price, address) VALUES (?, ?, ?, ?)',
+        [title, picture, price, address],
         (_, result) => {
           resolve(result);
         },
         (_, err) => {
-          reject('error', err);
+          reject('mi error', err);
         }
       );
     });
@@ -39,7 +40,7 @@ export const insertPlace = (name, image, address, latitude, longitude) => {
   return promise;
 };
 
-export const fetchPlaces = () => {
+export const fetchListings = () => {
   const promise = new Promise((resolve, reject) => {
     db.transaction((tx) => {
       tx.executeSql(
